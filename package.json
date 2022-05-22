@@ -1,0 +1,19 @@
+{
+  "name": "csu-bmb-oer",
+  "version": "1.0.0",
+  "description": "Serving biochemical OER to the world",
+  "authors": [
+    {
+      "name": "git-codewild",
+      "email": "ben@codewild.org"
+    }
+  ],
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "@npm-codewild/ckeditor5-interactive": "^0.0.1"
+  }
+}
+
+

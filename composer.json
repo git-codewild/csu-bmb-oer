@@ -1,0 +1,21 @@
+{
+    "name": "codewild/csu-bmb-oer",
+    "version": "1.0.0",
+    "description": "Serving biochemical OER to the world",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "codewild\\csubmboer\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "git-codewild",
+            "email": "ben@codewild.org"
+        }
+    ]
+}
