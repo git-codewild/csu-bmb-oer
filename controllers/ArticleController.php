@@ -25,10 +25,9 @@ class ArticleController extends Controller
         if (array_key_exists('id', $routeParams)) {
             $version = ModuleVersion::findByShortId($routeParams['id']);
             $articleRef = '/module/{path}/v/{id}/{n}';
-
         } else {
             $version = Module::getLatestVersion($routeParams['path']);
-            $articleRef = '/module/{path}/{n}';
+            $articleRef = array_key_exists('ch', $routeParams) ? '/ch'.$routeParams['ch'].'/{path}/{n}' : '/module/{path}/{n}';
         }
         $version->getNavs();
 

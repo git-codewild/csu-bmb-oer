@@ -101,7 +101,7 @@ class ModuleController extends Controller
         return $this->render("module/edit", ['model'=>$module, 'inputModel' => $inputModel]);
     }
 
-    // module/{path} or module/{path}/v/{id}
+    // module/{path} or module/{path}/v/{id} or ch{n}/{path}
     public function details(Request $request, Response $response){
         $params = $request->getRouteParams();
         $module = Module::findOne(['path' => $params['path']]);
@@ -112,10 +112,10 @@ class ModuleController extends Controller
             $articleRef = '/module/{path}/v/{id}/{n}';
         } else {
             $version = Module::getLatestVersion($module->path);
-            $articleRef = '/module/{path}/{n}';
+            $articleRef = array_key_exists('ch', $params) ? '/ch'.$params['ch'].'/{path}/{n}' : '/module/{path}/{n}';
         }
 
-        if (!AuthHandler::authorize($version, 'read')){
+        if ($version->status !== 2 && !AuthHandler::authorize($version, 'read')){
             throw new ForbiddenException();
         }
 
@@ -165,8 +165,6 @@ class ModuleController extends Controller
                 }
             }
         }
-
-
         return $this->render('module/details', ['model' => $module, 'version' => $version, 'articleRef' => $articleRef]);
     }
 
