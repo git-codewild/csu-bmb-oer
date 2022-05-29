@@ -21,7 +21,7 @@ class m0001_initial {
             parentId BINARY(16),
             n INT(2) NOT NULL,
             title VARCHAR(64),
-            moduleId BINARY(16)
+            moduleVersionId BINARY(16)
         );
         CREATE TRIGGER uuid_outline BEFORE INSERT ON outlines
             FOR EACH ROW SET NEW.id = UUID();";

@@ -18,7 +18,7 @@ class Outline extends Recursive
 
     public string $courseId = 'BC401';
     public string $type = '';
-    public ?string $moduleId = null;
+    public ?string $moduleVersionId = null;
     public ?string $title = ''; // Should be inherited from module if exists
 
 
@@ -34,7 +34,7 @@ class Outline extends Recursive
     public static function attributes(): array
     {
         $array = Recursive::attributes();
-        array_push($array, 'courseId', 'moduleId', 'title');
+        array_push($array, 'courseId', 'moduleVersionId', 'title');
         return $array;
     }
     public function labels(): array
@@ -44,7 +44,7 @@ class Outline extends Recursive
             'parentId' => 'Parent',
             'n' => 'Index',
             'title' => 'Title',
-            'moduleId' => 'Module'
+            'moduleVersionId' => 'Module'
         ];
     }
 
