@@ -3,6 +3,7 @@
 namespace codewild\csubmboer\models;
 
 use codewild\csubmboer\core\Recursive;
+use codewild\csubmboer\core\Request;
 
 class Outline extends Recursive
 {
@@ -60,4 +61,31 @@ class Outline extends Recursive
             self::COURSE_BC401 => 'The Fundamentals of Biochemistry',
         ];
     }
+
+    public function chapterList() {
+        $buffer = "<ol class='list-group list-group-numbered'>";
+        foreach ($this->children as $section) {
+            $buffer .= "<li class='list-group-item'>";
+            if ($section->moduleVersionId === null){
+                $buffer .= $section->title;
+            } else {
+                $path = ModuleVersion::findOne(['id' => $section->moduleVersionId])->module->path;
+                $url = Request::createUrl('ch{n}/{path}', ['n' => $this->n, 'path' => $path]);
+                $buffer .= "<a href='$url'>$section->title</a>";
+            }
+
+
+            if (!empty($section->children)){
+                $buffer .= "<ol style='list-style-type: upper-alpha'>";
+                foreach($section->children as $subsection){
+                    $buffer .= "<li class='list-group-flush'>$subsection->title</li>";
+                }
+                $buffer .= "</ol>";
+            }
+            $buffer .= "</li>";
+        }
+        $buffer .= "</ol>";
+        return $buffer;
+    }
+
 }
