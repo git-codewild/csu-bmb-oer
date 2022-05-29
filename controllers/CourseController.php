@@ -10,6 +10,7 @@ use codewild\csubmboer\core\exception\ForbiddenException;
 use codewild\csubmboer\core\middleware\AuthMiddleware;
 use codewild\csubmboer\core\Request;
 use codewild\csubmboer\core\Response;
+use codewild\csubmboer\models\Module;
 use codewild\csubmboer\models\Outline;
 
 class CourseController extends Controller
@@ -28,11 +29,13 @@ class CourseController extends Controller
         $params = $request->getRouteParams();
         // If only $params['ch'] is passed, get chapter by index and null parentId;
         $chapter = Outline::findOne(['n' => $params['ch'], 'parentId' => NULL]);
-        foreach ($chapter->children as $child){
-            if ($child->parentId === $chapter->id){
+        foreach ($chapter->children as $child) {
+            if ($child->parentId === $chapter->id) {
                 $child->parentId = null;
             }
         }
+
+        $modules = Module::getPublishedModules();
 
         $inputModel = new Outline();
 
@@ -57,6 +60,7 @@ class CourseController extends Controller
                     return $response->redirect();
                 }
             };
+            // DELETE
             if (array_key_exists('delete', $body)){
                 $inputModel = Outline::findOne(['id' => $body['id']]);
                 if($inputModel->delete()){
@@ -64,6 +68,7 @@ class CourseController extends Controller
                     return $response->redirect();
                 }
             };
+            // RENAME
             if (array_key_exists('rename', $body)){
                 $section = current(Outline::filter($chapter->children, ['id' => $body['id']]));
                 $section->title = $body['title'];
@@ -72,6 +77,7 @@ class CourseController extends Controller
                     return $response->redirect();
                 }
             };
+            // MOVE UP
             if (array_key_exists('moveUp', $body)){
                 if ($toUpdate->n > 1) {
                     $toUpdate->n -= 1;
@@ -137,13 +143,25 @@ class CourseController extends Controller
                     }
                     $toUpdate->parentId = $chapter->id;
                 }
-
                 if ($toUpdate->update(['parentId', 'n'])) {
                     Application::$app->session->setFlash('success', 'Section was indented.');
                     return $response->redirect();
                 }
             }
+            // SELECT MODULE
+            if (array_key_exists('selectModule', $body)){
+                $module = current(array_filter($modules, fn($v) => $v->id === $body['moduleId']));
+                $versionId = Module::getLatestVersion($module->path)->id;
+                $toUpdate->moduleVersionId = $versionId;
+                $toUpdate->title = $module->title;
+
+                if ($toUpdate->update(['title', 'moduleVersionId'])){
+                    Application::$app->session->setFlash('success', 'Module was linked successfully!');
+                    return $response->redirect();
+                }
+
+            }
         }
-        return $this->render('course/edit', ['model' => $chapter, 'inputModel' => $inputModel]);
+        return $this->render('course/edit', ['model' => $chapter, 'inputModel' => $inputModel, 'modules' => $modules]);
     }
 }
