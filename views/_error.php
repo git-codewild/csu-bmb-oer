@@ -24,18 +24,21 @@ use codewild\csubmboer\core\form\Form;
         Method: $method
     ";
 ?>
-<p class="alert alert-danger text-center">
-    <?php echo $message ?>
-</p>
+<div class="container">
 
-<?php if($code !== 403 && $code !== 404): ?>
-<div class="row justify-content-center mb-4">
-    <?php
-        $form = new Form();
-        echo $form->begin('', '/error');
-        echo $form->field($contact, 'subject')->readonly();
-        echo $form->textarea($contact, 'body')->readonly();
-        echo $form->end();
-    ?>
+    <p class="alert alert-danger text-center">
+        <?php echo $message ?>
+    </p>
+
+    <?php if($code !== 403 && $code !== 404): ?>
+    <div class="row justify-content-center mb-4">
+        <?php
+            $form = new Form();
+            echo $form->begin('', '/error');
+            echo $form->field($contact, 'subject')->readonly();
+            echo $form->textarea($contact, 'body')->readonly();
+            echo $form->end();
+        ?>
+    </div>
+    <?php endif; ?>
 </div>
-<?php endif; ?>
