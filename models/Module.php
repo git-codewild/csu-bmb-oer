@@ -92,6 +92,18 @@ class Module extends DbModel
         return $version;
     }
 
+    public static function getPublishedModules(){
+        $all = self::findAll();
+        $return = array();
+        foreach($all as $module) {
+            $version = self::getLatestVersion($module->path);
+            if ($version->status === ModuleVersion::STATUS_APPROVED){
+                $return[] = $version->module;
+            }
+        }
+        return $return;
+    }
+
 }
 
 ?>
