@@ -40,7 +40,7 @@ class Form {
     public function textarea(Model $model, $attribute, array $classes = []){
         return new TextareaField($model, $attribute, $classes);
     }
-    public function selectField(Model $model, $attribute, array $classes = []){
+    public function selectField(Model|array $model, $attribute, array $classes = []){
         return new SelectField($model, $attribute, $classes);
     }
 }
