@@ -5,7 +5,8 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "vlucas/phpdotenv": "^5.4"
+        "vlucas/phpdotenv": "^5.4",
+        "erusev/parsedown": "^1.7.4"
     },
     "autoload": {
         "psr-4": {
