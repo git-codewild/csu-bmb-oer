@@ -3,11 +3,12 @@
 namespace codewild\csubmboer\views\article;
 
 use codewild\csubmboer\core\Application;
+use codewild\csubmboer\core\Nav;
 use codewild\csubmboer\core\Request;
 use codewild\csubmboer\models\ArticleNav;
 use codewild\csubmboer\models\ModuleVersion;
 
-class _articleNav extends \codewild\csubmboer\core\Nav
+class _articleNav extends Nav
 {
     public ModuleVersion $version;
     public array $pages;
@@ -20,7 +21,7 @@ class _articleNav extends \codewild\csubmboer\core\Nav
         $flatten = $this->version->flattenNavs();
         $this->pages = array_column($flatten, 'n');
         array_unshift($this->pages, 0);
-        $this->titles[0] = $version->module->title;
+        $this->titles[0] = 'Outline';
         $this->routes[0] = Request::createUrl($path, ['path' => $version->module->path, 'id' => $version->shortId()]);
         foreach ($this->version->articleNavs as $nav) {
             $this->set($nav, $path);
@@ -50,7 +51,7 @@ class _articleNav extends \codewild\csubmboer\core\Nav
         return Application::$app->request->getRouteParams()['n'] ?? 0;
     }
     public function set(ArticleNav $nav, string $path, bool $isChild = false,){
-        $this->titles[$nav->n] = ($isChild) ? '&emsp13;'.$nav->article->title : $nav->article->title;
+        $this->titles[$nav->n] = ($isChild) ? '&emsp13;&emsp13;'.$nav->n.'. '.$nav->article->title : $nav->n.". ".$nav->article->title;
         $this->routes[$nav->n] = Request::createUrl($path, ['path' => $this->version->module->path, 'id' => $this->version->shortId(), 'n' => $nav->n]);
     }
 }
