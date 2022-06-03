@@ -16,11 +16,13 @@ $this->title = 'Manage Contacts';
     </div>
     <div class="col-sm-10">
     <?php
-        $contactsTable = Table::begin($model[0]);
-        foreach ($model as $contact){
-            echo $contactsTable->row($contact);
+        if (!empty($model)) {
+            $contactsTable = Table::begin($model[0]);
+            foreach ($model as $contact) {
+                echo $contactsTable->row($contact);
+            }
+            Table::end();
         }
-        Table::end();
     ?>
     </div>
 </div>
