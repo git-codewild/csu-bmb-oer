@@ -11,8 +11,10 @@ use codewild\csubmboer\controllers\ModuleVersionController;
 use codewild\csubmboer\controllers\UserController;
 use codewild\csubmboer\models\UserVM;
 
-require_once __DIR__.'/../vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$root = $_SERVER['DOCUMENT_ROOT'].'/../';
+
+require_once $root.'vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable($root);
 $dotenv->load();
 
 $config = [
@@ -28,7 +30,7 @@ $pathPattern = '{path:\w+-?\w+?}';
 
 date_default_timezone_set('America/Denver');
 
-$app = new Application(dirname(__DIR__), $config);
+$app = new Application($root, $config);
 
 $app->router->get('/', [SiteController::class, 'home']);
 $app->router->post('/', [SiteController::class, 'home']);
