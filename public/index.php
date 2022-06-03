@@ -33,10 +33,14 @@ $app = new Application(dirname(__DIR__), $config);
 $app->router->get('/', [SiteController::class, 'home']);
 $app->router->post('/', [SiteController::class, 'home']);
 
-$app->router->get('/contact', [SiteController::class, 'contact']);
-$app->router->post('/contact', [SiteController::class, 'contact']);
+$app->router->get('/about', [SiteController::class, 'about']);
+
+$app->router->get('/search', [SiteController::class, 'search']);
 
 $app->router->post('/error', [SiteController::class, 'error']);
+
+$app->router->get('/contact', [SiteController::class, 'contact']);
+$app->router->post('/contact', [SiteController::class, 'contact']);
 
 $app->router->get('/admin', [AdminController::class, 'index']);
 $app->router->post('/admin', [AdminController::class, 'index']);
