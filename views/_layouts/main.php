@@ -81,7 +81,7 @@ use codewild\csubmboer\core\components\Modal;
                     <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons graphic license" title="CC BY-NC-SA 4.0 License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
                 </div>
                 <div class="col-md-2 my-auto">
-                    <a href="https://github.com/git-codewild/csu-bmb-oer" target="_blank"><img class="image-thumbnail" src="img/logos/GitHub-Mark-32px.png" alt="GitHub logo" title="CSU-BMB-OER on GitHub"></a>
+                    <a href="https://github.com/git-codewild/csu-bmb-oer" target="_blank"><img class="image-thumbnail" src="/img/logos/GitHub-Mark-32px.png" alt="GitHub logo" title="CSU-BMB-OER on GitHub"></a>
                 </div>
             </div>
         </div>
