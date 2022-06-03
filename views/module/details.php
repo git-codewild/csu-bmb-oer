@@ -4,6 +4,7 @@
  * @var \codewild\csubmboer\models\Module $model
  * @var ModuleVersion $version
  * @var string $articleRef
+ * @var Outline $chapter
  *
  * */
 
@@ -15,7 +16,13 @@ use codewild\csubmboer\core\table\Table;
 use codewild\csubmboer\models\ModuleVersion;
 use codewild\csubmboer\views\article\_articleNav;
 
-$this->title = $model->title;
+$this->title = is_null($chapter) ? $model->title :
+    "<div class='row flex-row-reverse align-items-center'>
+        <div class='col text-start'>$model->title</div>
+        <div class='col flex-grow-0'> | </div>
+        <div class='col text-end'><a href='/ch$chapter->n' class='link-secondary'>Chapter $chapter->n: $chapter->title</a></div>
+        
+    </div>";
 
 $isAuthorizedModule = AuthHandler::authorize($model, 'update');
 $isAuthorizedVersionUpdate = AuthHandler::authorize($version, 'update');
@@ -62,13 +69,13 @@ $isAuthorizedVersionDelete = AuthHandler::authorize($version, 'delete');
                     if ($version->status === ModuleVersion::STATUS_APPROVED) {
                         $forkForm = new Form('', 'forkVersion');
                         echo $forkForm->begin();
-                        echo $forkForm->end('Fork this version', 'btn-info');
+                        echo $forkForm->end('Fork this version', 'btn-info mt-2');
                     }
                     if ($isAuthorizedVersionDelete) {
                         $deleteForm = new Form('', 'deleteVersion');
                         echo $deleteForm->begin();
                         $deleteModal = new Modal('deleteModal', 'Delete Version', 'Are you sure?', $deleteForm->end('Confirm delete', 'btn-danger'));
-                        $deleteModal->setClasses('btn-danger');
+                        $deleteModal->setClasses('btn-danger mt-2');
                         echo $deleteModal;
                     }
 

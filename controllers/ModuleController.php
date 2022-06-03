@@ -11,6 +11,7 @@ use codewild\csubmboer\core\Request;
 use codewild\csubmboer\core\Response;
 use codewild\csubmboer\models\Module;
 use codewild\csubmboer\models\ModuleVersion;
+use codewild\csubmboer\models\Outline;
 use codewild\csubmboer\models\UserRole;
 
 class ModuleController extends Controller
@@ -107,6 +108,8 @@ class ModuleController extends Controller
         $module = Module::findOne(['path' => $params['path']]);
         $module->getVersions();
 
+        $chapter = array_key_exists('ch', $params) ? Outline::findOne(['n' => $params['ch'], 'parentId' => null]) : null;
+
         if(array_key_exists('id', $params)){
             $version = current(array_filter($module->versions, fn($var) => $var->shortId() === $params['id']));
             $articleRef = '/module/{path}/v/{id}/{n}';
@@ -141,7 +144,7 @@ class ModuleController extends Controller
                 $newId = $version->clone();
                 if ($newId) {
                     $url = Request::createUrl('/module/{path}/v/{id}', ['path' => $module->path, 'id' => $newId]);
-                    Application::$app->session->setFlash('success', 'You have successfully cloned a module version!');
+                    Application::$app->session->setFlash('success', 'You have successfully forked a module version!');
                     return $response->redirect($url);
                 }
             }
@@ -165,7 +168,7 @@ class ModuleController extends Controller
                 }
             }
         }
-        return $this->render('module/details', ['model' => $module, 'version' => $version, 'articleRef' => $articleRef]);
+        return $this->render('module/details', ['model' => $module, 'version' => $version, 'articleRef' => $articleRef, 'chapter' => $chapter]);
     }
 
 }

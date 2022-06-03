@@ -15,12 +15,15 @@ use codewild\csubmboer\models\DataNav;
 use codewild\csubmboer\models\Figure;
 use codewild\csubmboer\models\Module;
 use codewild\csubmboer\models\ModuleVersion;
+use codewild\csubmboer\models\Outline;
 use codewild\csubmboer\models\Script_JSmol;
 
 class ArticleController extends Controller
 {
     public function index(Request $request, Response $response){
         $routeParams = $request->getRouteParams();
+
+        $chapter = array_key_exists('ch', $routeParams) ? Outline::findOne(['n' => $routeParams['ch'], 'parentId' => null]) : null;
 
         if (array_key_exists('id', $routeParams)) {
             $version = ModuleVersion::findByShortId($routeParams['id']);
@@ -38,7 +41,7 @@ class ArticleController extends Controller
             $article = false;
         }
 
-        return $this->render('article/index', ['model' => $version, 'article' => $article, 'articleRef' => $articleRef]);
+        return $this->render('article/index', ['model' => $version, 'article' => $article, 'articleRef' => $articleRef, 'chapter' => $chapter]);
     }
 
 
