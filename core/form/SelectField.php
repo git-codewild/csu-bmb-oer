@@ -13,11 +13,13 @@ class SelectField extends BaseField
     {
         if (is_array($model)){
             $this->options = $model;
+            parent::__construct(current($model), $attribute, $classes);
         } else {
             $this->options = $model::findAll();
+            parent::__construct($model, $attribute, $classes);
         }
 
-        parent::__construct(current($model), $attribute, $classes);
+
     }
 
     public function renderInput(): string{

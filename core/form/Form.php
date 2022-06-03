@@ -2,6 +2,7 @@
 
 namespace codewild\csubmboer\core\form;
 
+use codewild\csubmboer\core\db\DbModel;
 use codewild\csubmboer\core\Model;
 
 class Form {

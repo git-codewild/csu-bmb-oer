@@ -2,16 +2,16 @@
 
 namespace codewild\csubmboer\core\table;
 
-use codewild\csubmboer\core\db\DbModel;
+use codewild\csubmboer\core\Model;
 
 class BaseRow
 {
-    public DbModel $model;
+    public Model $model;
     public array $attributes;
 
     public string $lastColumn = '';
 
-    public function __construct(DbModel $model, ?array $attributes = null){
+    public function __construct(Model $model, ?array $attributes = null){
         $this->model = $model;
 
         if (is_null($attributes)){

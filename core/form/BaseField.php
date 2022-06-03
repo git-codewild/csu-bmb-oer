@@ -2,19 +2,19 @@
 
 namespace codewild\csubmboer\core\form;
 
-use codewild\csubmboer\core\db\DbModel;
+use codewild\csubmboer\core\Model;
 
 abstract class BaseField {
     abstract public function renderInput(): string;
 
-    public DbModel $model;
+    public Model $model;
     public string $attribute;
     public string $label;
     public array $classes = [];
 
     public bool $isHidden = false;
 
-    public function __construct(DbModel $model, string $attribute, ?array $classes = null){
+    public function __construct(Model $model, string $attribute, ?array $classes = null){
         $this->model = $model;
         $this->attribute = $attribute;
         $this->label = $this->model->getLabel($this->attribute);
