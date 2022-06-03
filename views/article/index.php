@@ -3,6 +3,7 @@
 /** @var \codewild\csubmboer\models\ModuleVersion $model
  *  @var \codewild\csubmboer\models\Article $article
  * @var string $articleRef;
+ * @var \codewild\csubmboer\models\Outline $chapter
  */
 
 use codewild\csubmboer\authorization\AuthHandler;
@@ -13,7 +14,14 @@ use codewild\csubmboer\models\FigureCard;
 use codewild\csubmboer\models\JSmolCard;
 use codewild\csubmboer\views\article\_articleNav;
 
-$this->title = $model->module->title;
+$this->title = is_null($chapter) ? $model->module->title :
+    "<div class='row flex-row-reverse flex-wrap-reverse '>
+        <div class='col-sm text-sm-start'>".$article->title."</div>
+        <div class='col-sm flex-grow-0 d-none d-sm-flex'> | </div>
+        <div class='col-sm flex-grow-0'>".$model->module->title."</div>
+        <div class='col-sm flex-grow-0 d-none d-sm-flex'> | </div>
+        <div class='col-sm text-sm-end'><a href='/ch$chapter->n' class='link-secondary'>Chapter $chapter->n: $chapter->title</a></div> 
+    </div>";
 
 ?>
 

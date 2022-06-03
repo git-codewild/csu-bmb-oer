@@ -12,6 +12,7 @@ use codewild\csubmboer\models\Article;
 use codewild\csubmboer\models\Outline;
 use codewild\csubmboer\models\ContactForm;
 use codewild\csubmboer\models\Module;
+use codewild\csubmboer\models\Search;
 
 
 class SiteController extends Controller {
@@ -46,6 +47,22 @@ class SiteController extends Controller {
             'model' => $contact,
         ]);
     }
+
+    public function about(){
+
+        return $this->render('about');
+    }
+
+    public function search(Request $request, Response $response) {
+        $body = $request->getBody();
+        $q = array_key_exists('q', $body) ? $body['q'] : null;
+
+        $results = (empty($q)) ? null : Search::search($q);
+
+        return $this->render('search', ['q' => $q, 'results' => $results]);
+    }
+
+
 
     public function error(Request $request, Response $response) {
         $contact = new ContactForm();
