@@ -172,6 +172,19 @@ $headings-font-family: 'factoria-book', sans-serif;
     }
 }
 
+.link-light:hover {
+    color: $gray-500 !important;
+}
+
+a>img{
+    @extend .link-light;
+}
+#svgSignature{
+    @extend .h3, .mb-0, .text-end;
+    line-height: 45px;
+
+}
+
 @import url("https://static.colostate.edu/fonts/factoria/factoria.css");
     /* font-families (all include normal and italic font-styles)
             factoria-thin
@@ -194,7 +207,7 @@ $headings-font-family: 'factoria-book', sans-serif;
 
 body {
     min-width: 375px;
-}    
+}
 main {
     display: flex;
     flex-direction: column;
@@ -204,7 +217,7 @@ main {
 
 @media (min-width: 768px){
     body {
-        height: 100vh !important; 
+        height: 100vh !important;
     }
 }
 
@@ -284,7 +297,7 @@ div#primaryLogo [id=svgSignature]{
     align-items: center;
     margin: 8px 0;
     padding-left: 32px;
-    
+
 }
 #secondaryLogo:before{
     content: '';
@@ -343,11 +356,12 @@ div#primaryLogo [id=svgSignature]{
 }
 
 /* Article styles */
-#articleHtml button {
+#articleHtml button, .interactive[type='button'] {
     @extend .btn-sm;
     @extend .btn-outline-info;
-
 }
+
+
 #applet {
     max-height: 100vh;
 }
