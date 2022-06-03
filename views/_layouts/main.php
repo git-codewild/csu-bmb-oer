@@ -11,7 +11,7 @@ use codewild\csubmboer\core\components\Modal;
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $this->title." | BC401: Fundamentals of Biochemistry | Colorado State University"; ?></title>
+    <title><?php echo strip_tags($this->title)." | BC401: Fundamentals of Biochemistry | Colorado State University"; ?></title>
     <!-- Bootstrap -->
     <link href="/css/csu-bmb-oer.css" rel="stylesheet">
   </head>
@@ -43,7 +43,7 @@ use codewild\csubmboer\core\components\Modal;
       </nav>
     </header>
     <main>
-        <h3 class="pageTitle"><?php echo $this->title ?></h3>
+        <h3 class="pageTitle py-2"><?php echo $this->title ?></h3>
         <div class="d-flex flex-column flex-grow-1 overflow-hidden my-3">
             <div id="alerts" class="col-sm-4 mx-auto text-center">
                 <?php if (Application::$app->session->getFlash('success')): ?>
@@ -70,12 +70,18 @@ use codewild\csubmboer\core\components\Modal;
     </main>
     <footer class="bg-primary text-light text-center">
         <div class="container">
-            <div class="row">
-                <a href="/contact" class="nav-link link-light">Contact Us</a>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <p><small>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="link-light">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</small></p>
+            <div class="row p-2 justify-content-between">
+                <nav class="col-md-2 nav justify-content-center">
+                    <a href="/about" class="nav-link link-light">About</a>
+                    <a href="/contact" class="nav-link link-light">Contact Us</a>
+                </nav>
+                <div class="col-md-8 mb-2">
+                    <small>All content is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link-light text-decoration-none">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</small>
+                    <br />
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons graphic license" title="CC BY-NC-SA 4.0 License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+                </div>
+                <div class="col-md-2 my-auto">
+                    <a href="https://github.com/git-codewild/csu-bmb-oer" target="_blank"><img class="image-thumbnail" src="img/logos/GitHub-Mark-32px.png" alt="GitHub logo" title="CSU-BMB-OER on GitHub"></a>
                 </div>
             </div>
         </div>
