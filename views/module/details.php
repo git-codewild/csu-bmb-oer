@@ -24,6 +24,7 @@ $this->title = is_null($chapter) ? $model->title :
         
     </div>";
 
+$isAuthorizedCreate = AuthHandler::authorize(new ModuleVersion($model->id), 'create');
 $isAuthorizedModule = AuthHandler::authorize($model, 'update');
 $isAuthorizedVersionUpdate = AuthHandler::authorize($version, 'update');
 $isAuthorizedVersionDelete = AuthHandler::authorize($version, 'delete');
@@ -66,7 +67,7 @@ $isAuthorizedVersionDelete = AuthHandler::authorize($version, 'delete');
                     if ($isAuthorizedVersionUpdate) {
                         echo "<a href='/module/$model->path/v/$shortId/edit' class='link'>Edit Version</a>";
                     }
-                    if ($version->status === ModuleVersion::STATUS_APPROVED) {
+                    if ($version->status === ModuleVersion::STATUS_APPROVED && $isAuthorizedCreate) {
                         $forkForm = new Form('', 'forkVersion');
                         echo $forkForm->begin();
                         echo $forkForm->end('Fork this version', 'btn-info mt-2');
