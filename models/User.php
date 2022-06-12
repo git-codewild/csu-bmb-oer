@@ -28,14 +28,13 @@ class User extends UserVM
         ];
     }
     public function labels(): array{
-        return [
-            'firstname' => 'First Name',
-            'lastname' => 'Last Name',
-            'username' => 'Username',
+        $output = parent::labels();
+        $output[] = [
             'email' => 'Email',
             'password' => 'Password',
             'confirmPw' => 'Repeat password',
         ];
+        return $output;
     }
 
     public function update(?array $keys = null){

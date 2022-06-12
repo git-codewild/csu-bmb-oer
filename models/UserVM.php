@@ -18,7 +18,7 @@ class UserVM extends UserModel {
     public string $username = '';
     public string $firstname = '';
     public string $lastname = '';
-    public string $created_at = '';
+    public ?string $created_at = null;
 
     public static function attributes(): array{
         return ['status', 'firstname', 'lastname', 'username', 'created_at'];
