@@ -50,6 +50,15 @@ class Article extends DbModel {
             $slide->resource = $class::findOne(['id' => $slide->resourceId]);
         }
     }
+
+    public function isShared(): bool{
+        $stmt = self::prepare("SELECT id FROM article_navs WHERE articleId = :articleId");
+        $stmt->bindValue(':articleId', $this->id);
+        $stmt->execute();
+        $rows = $stmt->fetchColumn(0);
+        var_dump($rows);
+        return (is_array($rows));
+    }
 }
 
 ?>

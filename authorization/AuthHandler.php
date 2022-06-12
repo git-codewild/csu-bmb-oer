@@ -5,6 +5,7 @@ namespace codewild\csubmboer\authorization;
 use codewild\csubmboer\core\Application;
 use codewild\csubmboer\core\Model;
 use codewild\csubmboer\models\Appendix;
+use codewild\csubmboer\models\Article;
 use codewild\csubmboer\models\Module;
 use codewild\csubmboer\models\ModuleVersion;
 use codewild\csubmboer\models\Outline;
@@ -52,6 +53,11 @@ class AuthHandler
                 }
             }
             if ($model instanceof ModuleVersion) {
+                // Any logged on user can fork
+                if ($action === self::ACTION_CREATE) {
+                    return true;
+                }
+
                 if ($action === self::ACTION_READ && $model->status !== ModuleVersion::STATUS_APPROVED){
                     if ($user->isInRole(UserRole::ROLE_ADMIN) || $user->id === $model->created_by){
                         return true;
@@ -74,6 +80,17 @@ class AuthHandler
                     }
                 }
             }
+            if ($model instanceof Article) {
+                // TODO: Expand article ownership/credits and
+                if ($action === self::ACTION_UPDATE) {
+                    if (!$model->isShared() && $user->isInRole(UserRole::ROLE_ADMIN)){
+                        return true;
+                    }
+                }
+            }
+
+
+
             if ($model instanceof Appendix){
                 if ($action === self::ACTION_CREATE){
                     if ($user->isInRole(UserRole::ROLE_AUTHOR) || $user->isInRole(UserRole::ROLE_ADMIN)){
