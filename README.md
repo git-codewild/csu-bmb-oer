@@ -17,9 +17,8 @@ OER stands for **Open Educational Resource**.
    - The software is available under The MIT License.
 
 ---
-###This project is made possible by the following:
+### This project is made possible by the following:
 
 | [<img src="img/logos/bmb_logo.svg" height="100">](https://bmb.colostate.edu) | &nbsp;&nbsp;&nbsp;&nbsp; | [<img src="img/logos/nsf_logo.png" height="100">](https://www.nsf.gov) | &nbsp;&nbsp;&nbsp;&nbsp; | [<img src="img/logos/CSU-Ram-357-617.png" height="100">](https://www.lib.colostate.edu)  |
 |:-----------------------------------------------------------------------------:|--------------------------|:----------------------------------------------------------------------:|--------------------------|:----------------------------------------------------------------------------------------:|
 |                  Biochemistry & Molecular <br>Biology at CSU                  | &nbsp;&nbsp;&nbsp;&nbsp; |                      National Science Foundation                       | &nbsp;&nbsp;&nbsp;&nbsp; |                       Libraries at <br/>Colorado State University                        |
-
