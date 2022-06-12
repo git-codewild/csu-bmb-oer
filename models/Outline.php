@@ -7,7 +7,7 @@ use codewild\csubmboer\core\Request;
 
 class Outline extends Recursive
 {
-    public const COURSE_BC401 = 'BC401';
+    public const COURSE_BC401 = ['BC401' => 'The Fundamentals of Biochemistry'];
 
     public const TYPE_CHAPTER = 'Chapter';
     public const TYPE_SECTION = 'Section';
@@ -56,12 +56,6 @@ class Outline extends Recursive
         return $output;
     }
 
-    public function courseNames(): array{
-        return [
-            self::COURSE_BC401 => 'The Fundamentals of Biochemistry',
-        ];
-    }
-
     public function chapterList() {
         $buffer = "<ol class='list-group list-group-numbered'>";
         foreach ($this->children as $section) {
@@ -74,11 +68,18 @@ class Outline extends Recursive
                 $buffer .= "<a href='$url'>$section->title</a>";
             }
 
-
             if (!empty($section->children)){
                 $buffer .= "<ol style='list-style-type: upper-alpha'>";
                 foreach($section->children as $subsection){
-                    $buffer .= "<li class='list-group-flush'>$subsection->title</li>";
+                    $buffer .= "<li class='list-group-flush'>";
+                    if (is_null($subsection->moduleVersionId)){
+                        $buffer .= $subsection->title;
+                    } else {
+                        $path = ModuleVersion::findOne(['id' => $subsection->moduleVersionId])->module->path;
+                        $url = Request::createUrl('ch{n}/{path}', ['n' => $this->n, 'path' => $path]);
+                        $buffer .= "<a href='$url'>$subsection->title</a>";
+                    }
+                    $buffer .= "</li>";
                 }
                 $buffer .= "</ol>";
             }
