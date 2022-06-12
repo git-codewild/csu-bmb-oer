@@ -67,6 +67,8 @@ $app->router->post('/ch{ch:\d{1,2}}/edit', [CourseController::class, 'edit']);
 $app->router->get("/ch{ch:\d{1,2}}/$pathPattern", [ModuleController::class, 'details']);
 $app->router->post("/ch{ch:\d{1,2}}/$pathPattern", [ModuleController::class, 'details']);
 
+$app->router->get("/ch{ch:\d{1,2}}/$pathPattern/{n:\d{1,2}}", [ArticleController::class, 'index']);
+
 $app->router->get('/modules', [ModuleController::class, 'index']);
 
 $app->router->get('/modules/create', [ModuleController::class, 'create']);
@@ -90,10 +92,6 @@ $app->router->post("/module/$pathPattern/{n:\d{1,2}}", [ArticleController::class
 $app->router->get("/module/$pathPattern/v/{id:\w{7}}/{n:\d{1,2}}", [ArticleController::class, 'index']);
 $app->router->post("/module/$pathPattern/v/{id:\w{7}}/{n:\d{1,2}}", [ArticleController::class, 'index']);
 
-$app->router->get("/ch{ch:\d{1,2}}/$pathPattern/{n:\d{1,2}}", [ArticleController::class, 'index']);
-
-$app->router->get('/article/{id:\w{7}}/edit', [ArticleController::class, 'edit']);
-$app->router->post('/article/{id:\w{7}}/edit', [ArticleController::class, 'edit']);
 
 $app->router->get("/module/$pathPattern/v/{id:\w{7}}/edit/{n:\d{1,2}}", [ArticleController::class, 'edit']);
 $app->router->post("/module/$pathPattern/v/{id:\w{7}}/edit/{n:\d{1,2}}", [ArticleController::class, 'edit']);

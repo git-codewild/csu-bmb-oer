@@ -6,6 +6,7 @@ use codewild\csubmboer\authorization\AuthHandler;
 use codewild\csubmboer\core\Application;
 use codewild\csubmboer\core\Controller;
 use codewild\csubmboer\core\exception\ForbiddenException;
+use codewild\csubmboer\core\middleware\AuthMiddleware;
 use codewild\csubmboer\core\Request;
 use codewild\csubmboer\core\Response;
 use codewild\csubmboer\models\Article;
@@ -48,19 +49,17 @@ class ArticleController extends Controller
 
     public function edit(Request $request, Response $response){
         $routeParams = $request->getRouteParams();
+        $version = ModuleVersion::findByShortId($routeParams['id']);
+        $version->getNavs();
+        $nav = current(ArticleNav::filter($version->articleNavs, ['n' => (int) $routeParams['n']]));
+        $nav->version = $version;
+        $nav->getNeighbors();
+        $article = $nav->article;
 
-        if (array_key_exists('path', $routeParams)) {
-            // {id} is for Version
-            $version = ModuleVersion::findByShortId($routeParams['id']);
-            $version->getNavs();
-            $nav = current(ArticleNav::filter($version->articleNavs, ['n' => (int) $routeParams['n']]));
-            $nav->version = $version;
-            $nav->getNeighbors();
-            $article = $nav->article;
-        } else {
-            $article = Article::findByShortId($routeParams['id']);
-            $nav = null;
+        if (!AuthHandler::authorize($version, 'update')){
+            throw new ForbiddenException();
         }
+
         $article->getSlides();
 
         // INPUT MODELS
