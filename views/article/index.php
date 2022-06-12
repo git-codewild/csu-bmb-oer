@@ -73,7 +73,7 @@ $this->title = is_null($chapter) ? $model->module->title :
     <section class="col-md-5 mh-100 p-0">
         <div class="d-flex flex-column h-100">
             <article class="h-100 overflow-auto px-4" id="articleHtml">
-                <?php echo html_entity_decode($article->html); ?>
+                <?php echo html_entity_decode(htmlspecialchars_decode($article->html)); ?>
             </article>
         </div>
     </section>

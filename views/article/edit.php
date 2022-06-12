@@ -91,7 +91,7 @@ $this->title = 'Edit Article: '.$article->title;
             </ul>
             <div id="articleTabContent" class="tab-content h-100 overflow-hidden">
                 <article class="tab-pane fade h-100 overflow-auto" id="articleHtml" role='tabpanel' aria-labelledby='articleHtmlTab'>
-                    <?php echo html_entity_decode($article->html); ?>
+                    <?php echo html_entity_decode(htmlspecialchars_decode($article->html)); ?>
                 </article>
                 <div class="tab-pane fade h-100" id="articleEditor" role='tabpanel' aria-labelledby='articleEditorTab'>
                     <?php
