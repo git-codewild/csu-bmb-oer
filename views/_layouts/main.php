@@ -11,7 +11,7 @@ use codewild\csubmboer\core\components\Modal;
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo strip_tags($this->title)." | BC401: Fundamentals of Biochemistry | Colorado State University"; ?></title>
+    <title><?php echo strip_tags($this->title)." | BMB OER | Colorado State University"; ?></title>
     <!-- Bootstrap -->
     <link href="/css/csu-bmb-oer.css" rel="stylesheet">
   </head>
@@ -31,7 +31,7 @@ use codewild\csubmboer\core\components\Modal;
                     </div>
                     <div id="secondaryLogo">
                       <h2>
-                        <a href="/">BC401: The Fundamentals of Biochemistry</a>
+                          <a href="/">BMB OER</a>
                       </h2>
                     </div>
                   </hgroup>

@@ -1,14 +1,15 @@
 <?php
 
 /**
- * @var \codewild\csubmboer\models\Outline[] $model
- * @var \codewild\csubmboer\models\Outline $inputModel
+ * @var Outline[] $model
+ * @var Outline $inputModel
  * */
 
 use codewild\csubmboer\core\form\Form;
 use codewild\csubmboer\core\table\Table;
+use codewild\csubmboer\models\Outline;
 
-$this->title = 'Table of Contents';
+$this->title = key(Outline::COURSE_BC401).': '.current(Outline::COURSE_BC401);
 
 ?>
 
