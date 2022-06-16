@@ -46,6 +46,10 @@ class AppendixController extends \codewild\csubmboer\core\Controller
         $path = $request->getRouteParams()['path'];
         $model = Appendix::findOne(['path' => $path]);
 
+        if (!AuthHandler::authorize($model, 'update')){
+            throw new ForbiddenException();
+        }
+
         if ($request->isPost()){
             $body = $request->getBody();
             $model->loadData($body);
