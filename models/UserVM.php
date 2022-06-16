@@ -2,8 +2,8 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\UserModel;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\UserModel;
 
 class UserVM extends UserModel {
     const STATUS_INACTIVE = 0;

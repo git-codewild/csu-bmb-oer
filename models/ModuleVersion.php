@@ -2,11 +2,11 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\exception\DbException;
-use codewild\csubmboer\core\Request;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\exception\DbException;
+use codewild\phpmvc\Request;
 
-class ModuleVersion extends \codewild\csubmboer\core\db\DbModel
+class ModuleVersion extends \codewild\phpmvc\db\DbModel
 {
     public const STATUS_CREATED = 0;
     public const STATUS_SUBMITTED = 1;

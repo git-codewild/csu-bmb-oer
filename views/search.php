@@ -5,7 +5,7 @@
  * @var array $results
  */
 
-use codewild\csubmboer\core\table\Table;
+use codewild\phpmvc\table\Table;
 
 $this->title = 'Search';
 

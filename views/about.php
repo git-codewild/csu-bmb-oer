@@ -1,6 +1,6 @@
 <?php
 
-use codewild\csubmboer\core\Application;
+use codewild\phpmvc\Application;
 
 $this->title = 'About';
 

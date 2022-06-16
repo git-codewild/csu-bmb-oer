@@ -2,8 +2,8 @@
 
 namespace codewild\csubmboer\authorization;
 
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\Model;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\Model;
 use codewild\csubmboer\models\Appendix;
 use codewild\csubmboer\models\Article;
 use codewild\csubmboer\models\Module;

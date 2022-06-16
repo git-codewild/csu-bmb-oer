@@ -4,7 +4,7 @@
  * @var \codewild\csubmboer\models\Module $model
  * */
 
-use codewild\csubmboer\core\form\Form;
+use codewild\phpmvc\form\Form;
 
 $this->title = 'Create Module';
 

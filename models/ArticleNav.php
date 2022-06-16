@@ -2,10 +2,10 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\db\DbModel;
-use codewild\csubmboer\core\Recursive;
-use codewild\csubmboer\core\Request;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\db\DbModel;
+use codewild\phpmvc\Recursive;
+use codewild\phpmvc\Request;
 
 class ArticleNav extends Recursive
 {

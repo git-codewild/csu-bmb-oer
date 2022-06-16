@@ -2,11 +2,11 @@
 
 namespace codewild\csubmboer\controllers;
 
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\Controller;
-use codewild\csubmboer\core\Request;
-use codewild\csubmboer\core\Response;
-use codewild\csubmboer\core\middleware\AuthMiddleware;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\Controller;
+use codewild\phpmvc\Request;
+use codewild\phpmvc\Response;
+use codewild\phpmvc\middleware\AuthMiddleware;
 use codewild\csubmboer\models\LoginForm;
 use codewild\csubmboer\models\User;
 use codewild\csubmboer\models\UserVM;

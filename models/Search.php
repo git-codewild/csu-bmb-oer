@@ -2,7 +2,7 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\Model;
+use codewild\phpmvc\Model;
 
 class Search extends Model
 {

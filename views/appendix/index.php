@@ -3,7 +3,7 @@
 /** @var $model Appendix[] */
 
 use codewild\csubmboer\authorization\AuthHandler;
-use codewild\csubmboer\core\table\Table;
+use codewild\phpmvc\table\Table;
 use codewild\csubmboer\models\Appendix;
 
 $this->title = 'Appendix';

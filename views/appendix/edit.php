@@ -2,7 +2,7 @@
 
 /** @var $model \codewild\csubmboer\models\Appendix */
 
-use codewild\csubmboer\core\form\Form;
+use codewild\phpmvc\form\Form;
 
 $this->title = $model->title.' - Edit';
 

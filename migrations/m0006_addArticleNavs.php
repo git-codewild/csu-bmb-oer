@@ -1,6 +1,6 @@
 <?php
 
-use codewild\csubmboer\core\Application;
+use codewild\phpmvc\Application;
 
 class m0006_addArticleNavs {
     public function up(){

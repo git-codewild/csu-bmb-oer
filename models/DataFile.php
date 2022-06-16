@@ -2,8 +2,8 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\db\BaseDbModel;
-use codewild\csubmboer\core\DbFile;
+use codewild\phpmvc\db\BaseDbModel;
+use codewild\phpmvc\DbFile;
 
 class DataFile extends DbFile
 {

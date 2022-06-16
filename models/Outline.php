@@ -2,8 +2,8 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\Recursive;
-use codewild\csubmboer\core\Request;
+use codewild\phpmvc\Recursive;
+use codewild\phpmvc\Request;
 
 class Outline extends Recursive
 {

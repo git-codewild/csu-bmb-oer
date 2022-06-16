@@ -7,9 +7,9 @@
  */
 
 use codewild\csubmboer\authorization\AuthHandler;
-use codewild\csubmboer\core\components\TabList;
-use codewild\csubmboer\core\form\Form;
-use codewild\csubmboer\core\lists\DescriptionList;
+use codewild\phpmvc\components\TabList;
+use codewild\phpmvc\form\Form;
+use codewild\phpmvc\lists\DescriptionList;
 use codewild\csubmboer\models\FigureCard;
 use codewild\csubmboer\models\JSmolCard;
 use codewild\csubmboer\views\article\_articleNav;

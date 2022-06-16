@@ -1,5 +1,5 @@
 <?php
-use codewild\csubmboer\core\Application;
+use codewild\phpmvc\Application;
 
 $url = Application::$app->request->getUrl();
 

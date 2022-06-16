@@ -2,9 +2,9 @@
 
 namespace codewild\csubmboer\views\article;
 
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\Nav;
-use codewild\csubmboer\core\Request;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\Nav;
+use codewild\phpmvc\Request;
 use codewild\csubmboer\models\ArticleNav;
 use codewild\csubmboer\models\ModuleVersion;
 

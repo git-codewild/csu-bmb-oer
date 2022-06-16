@@ -1,11 +1,11 @@
 <?php
 
-/** @var $this \codewild\csubmboer\core\View
+/** @var $this \codewild\phpmvc\View
  *  @var $model \codewild\csubmboer\models\ContactForm
 */
 
-use codewild\csubmboer\core\form\Form;
-use codewild\csubmboer\core\form\TextareaField;
+use codewild\phpmvc\form\Form;
+use codewild\phpmvc\form\TextareaField;
 
 $this->title = 'Contact Us';
 

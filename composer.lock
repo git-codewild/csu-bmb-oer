@@ -4,8 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "356c9331374737045d9c2e4c0dad2903",
+    "content-hash": "7eeba2523e764704476df1189b2910cd",
     "packages": [
+        {
+            "name": "codewild/php-mvc-core",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/git-codewild/php-mvc-core.git",
+                "reference": "a7bade291a8931a49d9e44c802c935534bfb824b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/git-codewild/php-mvc-core/zipball/a7bade291a8931a49d9e44c802c935534bfb824b",
+                "reference": "a7bade291a8931a49d9e44c802c935534bfb824b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "codewild\\phpmvc\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "git-codewild",
+                    "email": "ben@codewild.org"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/git-codewild/php-mvc-core/issues",
+                "source": "https://github.com/git-codewild/php-mvc-core/tree/v1.0.2"
+            },
+            "time": "2022-06-16T16:32:09+00:00"
+        },
         {
             "name": "erusev/parsedown",
             "version": "1.7.4",

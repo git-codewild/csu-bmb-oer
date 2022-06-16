@@ -4,7 +4,7 @@
  *
  */
 
-use codewild\csubmboer\core\form\Form;
+use codewild\phpmvc\form\Form;
 
 $this->title = 'Your Profile';
 

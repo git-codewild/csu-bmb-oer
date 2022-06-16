@@ -2,8 +2,8 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\db\DbModel;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\db\DbModel;
 
 
 class ContactForm extends DbModel {

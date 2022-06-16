@@ -2,10 +2,10 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\components\BaseCard;
-use codewild\csubmboer\core\components\Modal;
-use codewild\csubmboer\core\components\TabList;
-use codewild\csubmboer\core\form\Form;
+use codewild\phpmvc\components\BaseCard;
+use codewild\phpmvc\components\Modal;
+use codewild\phpmvc\components\TabList;
+use codewild\phpmvc\form\Form;
 
 class JSmolCard extends BaseCard
 {

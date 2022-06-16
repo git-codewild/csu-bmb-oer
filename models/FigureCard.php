@@ -2,7 +2,7 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\form\Form;
+use codewild\phpmvc\form\Form;
 
 class FigureCard
 {

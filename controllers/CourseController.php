@@ -3,13 +3,13 @@
 namespace codewild\csubmboer\controllers;
 
 use codewild\csubmboer\authorization\AuthHandler;
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\Controller;
-use codewild\csubmboer\core\exception\DbException;
-use codewild\csubmboer\core\exception\ForbiddenException;
-use codewild\csubmboer\core\middleware\AuthMiddleware;
-use codewild\csubmboer\core\Request;
-use codewild\csubmboer\core\Response;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\Controller;
+use codewild\phpmvc\exception\DbException;
+use codewild\phpmvc\exception\ForbiddenException;
+use codewild\phpmvc\middleware\AuthMiddleware;
+use codewild\phpmvc\Request;
+use codewild\phpmvc\Response;
 use codewild\csubmboer\models\Module;
 use codewild\csubmboer\models\Outline;
 

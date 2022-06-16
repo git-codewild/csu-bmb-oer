@@ -2,7 +2,7 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\db\DbModel;
+use codewild\phpmvc\db\DbModel;
 
 class Article extends DbModel {
     public const URL_INDEX = '/module/{path}/v/{id}/{n}';

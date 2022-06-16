@@ -2,7 +2,7 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\DbFile;
+use codewild\phpmvc\DbFile;
 
 class Image extends DbFile
 {

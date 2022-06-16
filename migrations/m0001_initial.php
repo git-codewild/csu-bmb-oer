@@ -1,6 +1,6 @@
 <?php
 
-use codewild\csubmboer\core\Application;
+use codewild\phpmvc\Application;
 
 class m0001_initial {
     public function up(){

@@ -2,7 +2,7 @@
 
 /** @var $model Appendix */
 
-use codewild\csubmboer\core\form\Form;
+use codewild\phpmvc\form\Form;
 use codewild\csubmboer\models\Appendix;
 
 $this->title = 'Create New Appendix';

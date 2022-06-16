@@ -2,7 +2,7 @@
 
 namespace codewild\csubmboer\models;
 
-class Slide extends \codewild\csubmboer\core\db\BaseDbModel
+class Slide extends \codewild\phpmvc\db\BaseDbModel
 {
     public const TYPE_FIGURE = 'Figure';
     public const TYPE_JSMOL = 'Script_JSmol';

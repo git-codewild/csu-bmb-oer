@@ -2,8 +2,8 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\db\DbModel;
-use codewild\csubmboer\core\exception\DbException;
+use codewild\phpmvc\db\DbModel;
+use codewild\phpmvc\exception\DbException;
 
 class Module extends DbModel
 {

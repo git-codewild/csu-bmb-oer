@@ -2,7 +2,7 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\db\DbModel;
+use codewild\phpmvc\db\DbModel;
 
 class Figure extends DbModel
 {

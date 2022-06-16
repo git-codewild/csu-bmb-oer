@@ -4,7 +4,7 @@
  * @var \codewild\csubmboer\models\Image[] $model
  */
 
-use codewild\csubmboer\core\table\Table;
+use codewild\phpmvc\table\Table;
 use codewild\csubmboer\views\admin\_adminNav;
 
 $this->title = 'Manage Images';

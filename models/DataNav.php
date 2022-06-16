@@ -2,9 +2,9 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\exception\DbException;
+use codewild\phpmvc\exception\DbException;
 
-class DataNav extends \codewild\csubmboer\core\db\BaseDbModel
+class DataNav extends \codewild\phpmvc\db\BaseDbModel
 {
 
     static public function tableName(): string

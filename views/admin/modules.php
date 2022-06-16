@@ -3,7 +3,7 @@
 /** @var \codewild\csubmboer\models\ModuleVersion $model
  */
 
-use codewild\csubmboer\core\table\Table;
+use codewild\phpmvc\table\Table;
 use codewild\csubmboer\views\admin\_adminNav;
 
 $this->title = 'Manage Modules';
@@ -18,7 +18,7 @@ $this->title = 'Manage Modules';
             if (!empty($model)) {
                 $versionsTable = Table::begin($model[0]);
                 foreach ($model as $version) {
-                    echo $versionsTable->row($version)->lastColumn('link', \codewild\csubmboer\core\Request::createUrl('/module/{path}/v/{id}/1', ['path' => $version->module->path, 'id' => $version->shortId()]));
+                    echo $versionsTable->row($version)->lastColumn('link', \codewild\phpmvc\Request::createUrl('/module/{path}/v/{id}/1', ['path' => $version->module->path, 'id' => $version->shortId()]));
                 }
                 Table::end();
             }

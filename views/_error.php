@@ -5,8 +5,8 @@
  *
  */
 
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\form\Form;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\form\Form;
 
     $code = $model->getCode();
     $message = $model->getMessage();

@@ -1,6 +1,6 @@
 <?php
 
-use codewild\csubmboer\core\Application;
+use codewild\phpmvc\Application;
 use codewild\csubmboer\controllers\UserController;
 use codewild\csubmboer\controllers\SiteController;
 

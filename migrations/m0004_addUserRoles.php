@@ -1,6 +1,6 @@
 <?php
 
-use codewild\csubmboer\core\Application;
+use codewild\phpmvc\Application;
 
 class m0004_addUserRoles {
     public function up(){

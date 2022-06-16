@@ -2,8 +2,8 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\Model;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\Model;
 use codewild\csubmboer\models\UserVM;
 
 class LoginForm extends Model {

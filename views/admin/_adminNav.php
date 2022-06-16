@@ -2,9 +2,9 @@
 
 namespace codewild\csubmboer\views\admin;
 
-use codewild\csubmboer\core\Application;
+use codewild\phpmvc\Application;
 
-class _adminNav extends \codewild\csubmboer\core\Nav
+class _adminNav extends \codewild\phpmvc\Nav
 {
     public function __construct()
     {

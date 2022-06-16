@@ -2,7 +2,7 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\db\BaseDbModel;
+use codewild\phpmvc\db\BaseDbModel;
 
 class UserRole extends BaseDbModel
 {

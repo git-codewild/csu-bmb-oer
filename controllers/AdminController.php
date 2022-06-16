@@ -2,15 +2,15 @@
 
 namespace codewild\csubmboer\controllers;
 
-use codewild\csubmboer\core\middleware\AuthMiddleware;
-use codewild\csubmboer\core\Request;
-use codewild\csubmboer\core\Response;
+use codewild\phpmvc\middleware\AuthMiddleware;
+use codewild\phpmvc\Request;
+use codewild\phpmvc\Response;
 use codewild\csubmboer\models\ContactForm;
 use codewild\csubmboer\models\Image;
 use codewild\csubmboer\models\ModuleVersion;
 use codewild\csubmboer\models\UserVM;
 
-class AdminController extends \codewild\csubmboer\core\Controller
+class AdminController extends \codewild\phpmvc\Controller
 {
     public function __construct()
     {

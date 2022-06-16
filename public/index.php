@@ -1,7 +1,7 @@
 <?php
 
 use codewild\csubmboer\controllers\AppendixController;
-use codewild\csubmboer\core\Application;
+use codewild\phpmvc\Application;
 use codewild\csubmboer\controllers\AdminController;
 use codewild\csubmboer\controllers\ArticleController;
 use codewild\csubmboer\controllers\CourseController;

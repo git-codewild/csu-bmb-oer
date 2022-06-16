@@ -1,7 +1,7 @@
 <?php
 
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\components\Modal;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\components\Modal;
 
 ?>
 

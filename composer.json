@@ -1,12 +1,13 @@
 {
     "name": "codewild/csu-bmb-oer",
-    "version": "1.0.8",
+    "version": "1.1.0",
     "description": "Serving biochemical OER to the world",
     "type": "project",
     "license": "MIT",
     "require": {
         "vlucas/phpdotenv": "^5.4",
-        "erusev/parsedown": "^1.7.4"
+        "erusev/parsedown": "^1.7.4",
+        "codewild/php-mvc-core": "^1.0"
     },
     "autoload": {
         "psr-4": {

@@ -4,8 +4,8 @@
  * @var ModuleVersion[] $model
  * */
 
-use codewild\csubmboer\core\Request;
-use codewild\csubmboer\core\table\Table;
+use codewild\phpmvc\Request;
+use codewild\phpmvc\table\Table;
 use codewild\csubmboer\authorization\AuthHandler;
 use codewild\csubmboer\models\Module;
 use codewild\csubmboer\models\ModuleVersion;

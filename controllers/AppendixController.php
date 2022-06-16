@@ -3,13 +3,13 @@
 namespace codewild\csubmboer\controllers;
 
 use codewild\csubmboer\authorization\AuthHandler;
-use codewild\csubmboer\core\Application;
-use codewild\csubmboer\core\exception\ForbiddenException;
-use codewild\csubmboer\core\Request;
-use codewild\csubmboer\core\Response;
+use codewild\phpmvc\Application;
+use codewild\phpmvc\exception\ForbiddenException;
+use codewild\phpmvc\Request;
+use codewild\phpmvc\Response;
 use codewild\csubmboer\models\Appendix;
 
-class AppendixController extends \codewild\csubmboer\core\Controller
+class AppendixController extends \codewild\phpmvc\Controller
 {
     public function index(Request $request, Response $response){
         $appendices = Appendix::findAll();

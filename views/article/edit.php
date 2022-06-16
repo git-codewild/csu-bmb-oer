@@ -7,9 +7,9 @@
  *  @var \codewild\csubmboer\models\DataFile $newDataFile
  */
 
-use codewild\csubmboer\core\components\Modal;
-use codewild\csubmboer\core\components\TabList;
-use codewild\csubmboer\core\form\Form;
+use codewild\phpmvc\components\Modal;
+use codewild\phpmvc\components\TabList;
+use codewild\phpmvc\form\Form;
 use codewild\csubmboer\models\FigureCard;
 use codewild\csubmboer\models\JSmolCard;
 use codewild\csubmboer\views\article\_articleNav;

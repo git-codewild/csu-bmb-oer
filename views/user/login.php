@@ -1,10 +1,10 @@
 <?php
 
-/** @var $this \codewild\csubmboer\core\View
+/** @var $this \codewild\phpmvc\View
  *  @var $model \codewild\csubmboer\models\LoginForm 
 */
 
-use codewild\csubmboer\core\form\Form;
+use codewild\phpmvc\form\Form;
 
 $this->title = 'Log In';
 

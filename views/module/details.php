@@ -9,10 +9,10 @@
  * */
 
 use codewild\csubmboer\authorization\AuthHandler;
-use codewild\csubmboer\core\components\Modal;
-use codewild\csubmboer\core\form\Form;
-use codewild\csubmboer\core\lists\DescriptionList;
-use codewild\csubmboer\core\table\Table;
+use codewild\phpmvc\components\Modal;
+use codewild\phpmvc\form\Form;
+use codewild\phpmvc\lists\DescriptionList;
+use codewild\phpmvc\table\Table;
 use codewild\csubmboer\models\ModuleVersion;
 use codewild\csubmboer\views\article\_articleNav;
 

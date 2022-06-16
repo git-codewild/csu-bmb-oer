@@ -2,7 +2,7 @@
 
 namespace codewild\csubmboer\models;
 
-use codewild\csubmboer\core\UserModel;
+use codewild\phpmvc\UserModel;
 
 class User extends UserVM
 {

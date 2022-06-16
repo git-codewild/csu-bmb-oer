@@ -5,8 +5,8 @@
  * @var Outline $inputModel
  * */
 
-use codewild\csubmboer\core\form\Form;
-use codewild\csubmboer\core\table\Table;
+use codewild\phpmvc\form\Form;
+use codewild\phpmvc\table\Table;
 use codewild\csubmboer\models\Outline;
 
 $this->title = key(Outline::COURSE_BC401).': '.current(Outline::COURSE_BC401);
