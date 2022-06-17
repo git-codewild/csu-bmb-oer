@@ -4,22 +4,23 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc90afb2f218c612cba11b5f79d741f2",
+    "content-hash": "73eec375dac3bf95b233405b4c0e35d2",
     "packages": [
         {
             "name": "codewild/php-mvc-core",
-            "version": "v1.0.6",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/git-codewild/php-mvc-core.git",
-                "reference": "d22950f851189a20421ab5dcdd3cff10e8c40414"
+                "reference": "d31bc3c413f0ca0e1e013deb15b311ab465402d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/git-codewild/php-mvc-core/zipball/d22950f851189a20421ab5dcdd3cff10e8c40414",
-                "reference": "d22950f851189a20421ab5dcdd3cff10e8c40414",
+                "url": "https://api.github.com/repos/git-codewild/php-mvc-core/zipball/d31bc3c413f0ca0e1e013deb15b311ab465402d0",
+                "reference": "d31bc3c413f0ca0e1e013deb15b311ab465402d0",
                 "shasum": ""
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -38,9 +39,9 @@
             ],
             "support": {
                 "issues": "https://github.com/git-codewild/php-mvc-core/issues",
-                "source": "https://github.com/git-codewild/php-mvc-core/tree/v1.0.6"
+                "source": "https://github.com/git-codewild/php-mvc-core/tree/main"
             },
-            "time": "2022-06-16T17:13:20+00:00"
+            "time": "2022-06-17T18:10:05+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -557,7 +558,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "codewild/php-mvc-core": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
