@@ -121,6 +121,8 @@ $app->router->post('/profile', [UserController::class, 'profile']);
 // For security, needs to change to post
 $app->router->get('/logout', [UserController::class, 'logout']);
 
+$app->router->get('/molstar', [SiteController::class, 'molstar']);
+
 $app->run();
 
 ?>

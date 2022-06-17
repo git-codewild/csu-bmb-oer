@@ -53,6 +53,12 @@ class SiteController extends Controller {
         return $this->render('about');
     }
 
+    public function molstar(){
+        $this->setLayout('molstar');
+
+        return $this->render('molstar');
+    }
+
     public function search(Request $request, Response $response) {
         $body = $request->getBody();
         $q = array_key_exists('q', $body) ? $body['q'] : null;
