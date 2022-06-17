@@ -164,7 +164,7 @@ $dark: #105456;
 $font-family-base: 'prox-regular', sans-serif;
 $headings-font-family: 'factoria-book', sans-serif;
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 @each $color, $value in $cssColors  {
     .text-#{$color} {
