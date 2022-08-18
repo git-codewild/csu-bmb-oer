@@ -5,12 +5,13 @@ namespace codewild\csubmboer\controllers;
 use codewild\csubmboer\authorization\AuthHandler;
 use codewild\phpmvc\Application;
 use codewild\phpmvc\Controller;
+use codewild\phpmvc\ContactForm;
 use codewild\phpmvc\exception\ForbiddenException;
 use codewild\phpmvc\Request;
 use codewild\phpmvc\Response;
 use codewild\csubmboer\models\Article;
 use codewild\csubmboer\models\Outline;
-use codewild\csubmboer\models\ContactForm;
+
 use codewild\csubmboer\models\Module;
 use codewild\csubmboer\models\Search;
 
